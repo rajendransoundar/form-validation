@@ -33,12 +33,12 @@ export default function App() {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!values.email) {
-      errors.email = "email is required"
+      errors.email = "Email is required"
     } else if (!regex.test(values.email)) {
       errors.email = "Please enter a valid email id"
     }
     if(!values.password) {
-      errors.password = "password is required"
+      errors.password = "Password is required"
     }else if(values.password.length <4) {
       errors.password = "Password must be more than 4 characters"
     }
@@ -47,7 +47,7 @@ export default function App() {
  
   return (
     <div className="container">
-      <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
+      {/* <pre>{JSON.stringify(formValues, undefined, 2)}</pre> */}
       <Form onSubmit={handleSubmit}>
         <h1>Login Form</h1>
         <hr />
@@ -75,7 +75,7 @@ export default function App() {
         </Form.Group>
         <p>{formErrors.password}</p>
 
-        <Button variant="primary" type="submit">
+        <Button className="w-100" variant="primary" type="submit">
           Submit
         </Button>
       </Form>
